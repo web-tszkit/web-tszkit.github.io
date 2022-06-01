@@ -1,0 +1,266 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+button {
+  background-color: #ececec;
+  border-radius: 2em;
+  border-style: none;
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
+button.btn_not_avail {
+  background-color: #f6f6f6;
+  color: #74747494;
+  cursor: not-allowed;
+}
+
+button.btn_float_right {
+  float: right;
+}
+
+button:hover .tooltip_container > .tooltip, button:hover .tooltip_container > .tooltip_below {
+  visibility: visible;
+}
+
+.backbone {
+  visibility: hidden;
+}
+
+.tooltip_container {
+  height: 0;
+  position: relative;
+  padding: 0 2em;
+}
+
+.tooltip_container > .tooltip {
+  background-color: black;
+  color: white;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  visibility: hidden;
+  position: absolute;
+  bottom: 1.55em;
+  left: -2em;
+  width: 8em;
+}
+
+.tooltip_container > .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip_container > .tooltip_below {
+  background-color: black;
+  color: white;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  visibility: hidden;
+  position: absolute;
+  top: 0.55em;
+  left: -2em;
+  width: 8em;
+}
+
+.tooltip_container > .tooltip_below::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+hr {
+  border-width: 0.08em 0 0 0;
+  border-style: solid;
+  border-color: #97979737;
+  margin-top: 0.5em;
+}
+
+nav {
+  padding: 0.5em 0 0 1em;
+}
+
+nav > span {
+  margin: 0 0.5em;
+}
+
+nav > button {
+  margin: 0.3em 0 0 0.5em;
+  padding: 0.4em 1em;
+}
+
+#tool_bar {
+  padding: 0.5em 1em 0 1em;
+}
+
+#tool_bar > button, #tool_bar .div_backbone {
+  margin: 0 1em;
+  padding: 0.4em 1em;
+}
+
+#tool_bar #btn_del_card, #tool_bar #btn_undo {
+  width: 6em;
+  cursor: default;
+}
+
+#tool_bar #tool_bar_backbone {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#kanban_board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#kanban_board button {
+  padding: 0.4em 1em;
+}
+
+#kanban_board > li.col {
+  border-width: 0.08em;
+  border-style: solid;
+  border-color: #c2c2c2;
+  min-width: 14em;
+  width: 33%;
+}
+
+#kanban_board > li.col > .col_header {
+  background-color: #ececec;
+  border-width: 0 0 0.08em 0;
+  border-style: solid;
+  border-color: #c2c2c2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.7em 0;
+}
+
+#kanban_board > li.col > .col_header > .col_title {
+  margin: 0.6em 0.8em;
+}
+
+#kanban_board > li.col > .col_header > button.btn_add_card {
+  background-color: #d0cfcf;
+  margin: 0.4em 0;
+  padding: 0.2em 1em;
+}
+
+#kanban_board > li.col > .card_zone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+}
+
+#kanban_board > li.col > .card_zone > .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-width: 0.08em;
+  border-style: solid;
+  margin: 0.4em 0;
+  padding: 1em;
+  cursor: move;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_header > button.btn_change_content {
+  color: white;
+  padding: 0 1em 0.5em 1em;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_header > span.card_num {
+  font-style: italic;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_body > span {
+  margin-bottom: 0.25em;
+}
+
+#kanban_board > li.col > .card_zone > .card > .card_body > span.card_content {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#kanban_board > li:first-child .card {
+  background-color: #eb8b8b;
+  border-color: #a84444;
+}
+
+#kanban_board > li:first-child .btn_change_content {
+  background-color: #ba3f3fba;
+}
+
+#kanban_board > li:nth-child(2) .card {
+  background-color: #9bc6f9;
+  border-color: #5a90d1;
+}
+
+#kanban_board > li:nth-child(2) .btn_change_content {
+  background-color: #569ff5;
+}
+
+#kanban_board > li:nth-child(3) .card {
+  background-color: #a8efaf;
+  border-color: #68cf72;
+}
+
+#kanban_board > li:nth-child(3) .btn_change_content {
+  background-color: #59dd66;
+}
+/*# sourceMappingURL=kanban_style_0_2.css.map */
